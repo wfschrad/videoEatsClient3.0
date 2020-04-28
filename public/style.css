@@ -38,7 +38,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url('images/home.jpg');
+	background-image: url('/images/home.JPG');
 	height: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
