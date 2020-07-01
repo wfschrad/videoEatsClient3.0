@@ -33,6 +33,7 @@ h1 {
 html,
 body {
 	height: 100%;
+	margin: 0;
 }
 
 .parent {
@@ -218,9 +219,10 @@ body {
 .vote {
 	background-color: purple;
 	color: white;
-	border-radius: 20%;
+	border-radius: 30px;
 	width: 100px;
 	margin-left: 10px;
+	padding: 5px;
 }
 .vote:hover {
 	background-color: plum;
@@ -326,9 +328,6 @@ img.photo-item {
 	align-items: center;
 	height: 10vh;
 	background-color: #f8f9fa;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 }
 
 .footer__team {
