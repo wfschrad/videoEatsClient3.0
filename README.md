@@ -15,7 +15,6 @@ Backend repository: [videoEatsApi](https://github.com/wfschrad/videoEatsApi)
 ## Documentation
 - [Screenshots of major features and how they work](https://github.com/wfschrad/videoEatsClient3.0/blob/master/documentation/Images/screenshots%20of%20app)
 - [Feature List and MVPs](https://github.com/wfschrad/videoEatsClient3.0/blob/master/documentation/feature-list.md)
-- [List of React Components (incomplete)](https://github.com/wfschrad/videoEatsClient3.0/blob/master/documentation/react-components.md)
 - [Schema](https://github.com/wfschrad/videoEatsClient3.0/blob/master/documentation/Images/videoEats_schema2.3.png)
 - [Front End Routes](https://github.com/wfschrad/videoEatsClient3.0/blob/master/documentation/front-end-routes.md)
 - [Back End Routes](https://github.com/wfschrad/videoEatsClient3.0/blob/master/documentation/back-end-routes.md)
