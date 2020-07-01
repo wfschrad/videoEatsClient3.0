@@ -4,9 +4,9 @@ window.initMap = (targets) => {
 	const sf = { lat: 37.773, lng: -122.431 };
 
 	//icons
-	const blueFlagIcon = 'http://maps.google.com/mapfiles/ms/icons/flag.png';
-	const purpleIcon = 'http://maps.google.com/mapfiles/ms/icons/purple.png';
-	const purpleIconDot = 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
+	const blueFlagIcon = 'https://maps.google.com/mapfiles/ms/icons/flag.png';
+	const purpleIcon = 'https://maps.google.com/mapfiles/ms/icons/purple.png';
+	const purpleIconDot = 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png';
 
 	const options = {
 		center: sf,

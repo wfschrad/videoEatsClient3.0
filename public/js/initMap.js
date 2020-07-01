@@ -1,3 +1,10 @@
+// window.initMap = () => {
+// 	import makeMap from ('./utils');
+// 	makeMap();
+// }
+// console.log('make that map dog')
+//makeMap();
+
 window.initMap = () => {
 	const sf = { lat: 37.773, lng: -122.431 };
 	const test2 = { lat: 37.777, lng: -122.418 };
@@ -5,9 +12,9 @@ window.initMap = () => {
 	const test4 = { lat: 37.772, lng: -122.414 };
 
 	//icons
-	const blueFlagIcon = 'http://maps.google.com/mapfiles/ms/icons/flag.png';
-	const purpleIcon = 'http://maps.google.com/mapfiles/ms/icons/purple.png';
-	const purpleIconDot = 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
+	const blueFlagIcon = 'https://maps.google.com/mapfiles/ms/icons/flag.png';
+	const purpleIcon = 'https://maps.google.com/mapfiles/ms/icons/purple.png';
+	const purpleIconDot = 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png';
 
 	const options = {
 		center: sf,
