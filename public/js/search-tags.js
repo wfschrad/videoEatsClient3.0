@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 		// grabs all the tags from the backend
 		const res = await fetch(`${api}businesses/tags`);
 		const { tags } = await res.json();
-		console.log(tags);
+		// console.log(tags);
 		searchTagsField.addEventListener('keyup', (e) => {
 			let data = autoComplete(tags, e.target.value);
 			if (!e.target.value) {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 	const createDiv = document.createElement('div');
 	const createSelectedULDiv = document.createElement('ul');
 	tagResults.addEventListener('click', (e) => {
-		console.log(e.target.id, e.target.innerHTML);
+		// console.log(e.target.id, e.target.innerHTML);
 		createDiv.classList.add('tag-control');
 		const createSelectedLIDiv = document.createElement('li');
 		createSelectedLIDiv.innerHTML = e.target.innerHTML;

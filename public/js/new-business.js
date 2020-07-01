@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 			`https://maps.googleapis.com/maps/api/geocode/json?address=${fetchAddress}&key=AIzaSyDGY66OXtcdxsGZP88SUVAJGu7zK5-Eli4`
 		);
 		const geo = await data.json();
-		console.log('GEO', geo.results[0].geometry.location);
+		// console.log('GEO', geo.results[0].geometry.location);
 		const lat = geo.results[0].geometry.location.lat;
 		const lng = geo.results[0].geometry.location.lng;
 		const body = {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 			lat,
 			lon: lng
 		};
-		console.log(body);
+		// console.log(body);
 
 		try {
 			const res = await fetch(`${api}businesses`, {

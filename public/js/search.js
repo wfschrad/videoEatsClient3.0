@@ -14,7 +14,7 @@ window.initMap = (targets) => {
 	};
 	const map = new google.maps.Map(document.getElementById('map'), options);
 
-	console.log('targets: ', targets);
+	// console.log('targets: ', targets);
 	if (targets) {
 		targets.forEach((target) => {
 			addMarker({
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 		const body = {
 			name: sessionSearchValue
 		};
-		console.log('BODY (105', body);
+		// console.log('BODY (105', body);
 		fetchBusinessSearch(body);
 	} else {
 		searchField.classList.add('hidden');
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 		const body = {
 			tagBasic: sessionTagValue
 		};
-		console.log('BODY (105', body);
+		// console.log('BODY (105', body);
 		fetchBusinessSearch(body);
 	}
 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 			});
 
 			const { businesses } = await res.json();
-			console.log(businesses);
+			// console.log(businesses);
 
 			// declare ratings array to store the ratings
 			generateCards(businesses);
