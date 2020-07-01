@@ -369,3 +369,10 @@ img.photo-item {
 .footer__about {
 	margin-bottom: 0;
 }
+
+/* media queries */
+@media only screen and (min-width: 576px) {
+	#navbarSearch {
+		width: 155px;
+	}
+}

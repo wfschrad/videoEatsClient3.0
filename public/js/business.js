@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		// destructure to get the reviews array of objects
 		const { reviews } = await res.json();
-		console.log(reviews);
 
 		// Finds the average of the ratings
 		let ratingsArray = [];
@@ -98,7 +97,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 						<div class="video-review">
 							<iframe width="560" height="315" src=${review.videoLink}></iframe>
 						</div>
-						<p <span class="card-text username">${review.User.userName}</span> <button id="${review.id}-1" class="vote upVote">Like: ${review.upVoteCount}</button> <button id="${review.id}-2" class="vote downVote">Dislike: ${review.downVoteCount}</button></p>
+						<p <span class="card-text username">${review.User
+							.userName}</span> <button id="${review.id}-1" class="vote upVote">Like: ${review.upVoteCount}</button> <button id="${review.id}-2" class="vote downVote">Dislike: ${review.downVoteCount}</button></p>
 						<p class="card-text">${review.createdAt.slice(5, 10) + '-' + review.createdAt.slice(0, 4)}</p>
 						<div>
 							<button class="review-edit hidden btn btn-light" id="edit-${review.User.id}">Edit</button>
@@ -119,7 +119,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 							<span class="star"></span>
 						</div>
 						<p class="card-text review-text">${review.reviewText}</p>
-						<p <span class="card-text username">${review.User.userName}</span> <button id="${review.id}-1" class="vote upVote">Like: ${review.upVoteCount}</button> <button id="${review.id}-2" class="vote downVote">Dislike: ${review.downVoteCount}</button></p>
+						<p <span class="card-text username">${review.User
+							.userName}</span> <button id="${review.id}-1" class="vote upVote">Like: ${review.upVoteCount}</button> <button id="${review.id}-2" class="vote downVote">Dislike: ${review.downVoteCount}</button></p>
 						<p class="card-text">${review.createdAt.slice(5, 10) + '-' + review.createdAt.slice(0, 4)}</p>
 						<div>
 							<button class="review-edit hidden btn btn-light" id="edit-${review.User.id}">Edit</button>
@@ -142,7 +143,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 						<div class="video-review">
 							<iframe width="560" height="315" src=${review.videoLink}></iframe>
 						</div>
-						<p <span class="card-text username">${review.User.userName}</span> <button id="${review.id}-1" class="vote upVote">Like: ${review.upVoteCount}</button> <button id="${review.id}-2" class="vote downVote">Dislike: ${review.downVoteCount}</button></p>
+						<p <span class="card-text username">${review.User
+							.userName}</span> <button id="${review.id}-1" class="vote upVote">Like: ${review.upVoteCount}</button> <button id="${review.id}-2" class="vote downVote">Dislike: ${review.downVoteCount}</button></p>
 						<p class="card-text">${review.createdAt.slice(5, 10) + '-' + review.createdAt.slice(0, 4)}</p>
 						<div>
 							<button class="review-edit hidden btn btn-light" id="edit-${review.User.id}">Edit</button>
@@ -182,12 +184,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 	for (let btn of upVoteBtns) {
 		btn.addEventListener('click', async (ev) => {
-			console.log('target', ev.target);
-			console.log('targetId', ev.target.id);
+			// console.log('target', ev.target);
+			// console.log('targetId', ev.target.id);
 			btn.disabled = true;
 			btn.classList.add('clicked');
 			const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}2`;
-			console.log('TOGGLEtargetId', toggleTargetId);
+			// console.log('TOGGLEtargetId', toggleTargetId);
 
 			const btnMirror = document.getElementById(toggleTargetId);
 			btnMirror.disabled = false;
@@ -215,7 +217,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 					throw res;
 				}
 				const data = await res.json();
-				console.log('data(155', data);
+				// console.log('data(155', data);
 				btn.innerHTML = `Like: ${data.upVoteCount}`;
 				btnMirror.innerHTML = `Dislike: ${data.downVoteCount}`;
 
@@ -224,9 +226,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 				if (err.status === 401) {
 					window.location.href = '/log-in';
 				} else {
-					console.log('NOPE');
-					console.log(err);
-					console.log(err.message);
+					// console.log('NOPE');
+					// console.log(err);
+					// console.log(err.message);
 				}
 			}
 		});
@@ -234,12 +236,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 	for (let btn of downVoteBtns) {
 		btn.addEventListener('click', async (ev) => {
-			console.log('target', ev.target);
-			console.log('targetId', ev.target.id);
+			// console.log('target', ev.target);
+			// console.log('targetId', ev.target.id);
 			btn.disabled = true;
 			btn.classList.add('clicked');
 			const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
-			console.log('TOGGLEtargetId', toggleTargetId);
+			// console.log('TOGGLEtargetId', toggleTargetId);
 
 			const btnMirror = document.getElementById(toggleTargetId);
 			btnMirror.disabled = false;
@@ -267,7 +269,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 					throw res;
 				}
 				const data = await res.json();
-				console.log('data(155', data);
+				// console.log('data(155', data);
 				btn.innerHTML = `Dislike: ${data.downVoteCount}`;
 				btnMirror.innerHTML = `Like: ${data.upVoteCount}`;
 
@@ -276,9 +278,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 				if (err.status === 401) {
 					window.location.href = '/log-in';
 				} else {
-					console.log('NOPE');
-					console.log(err);
-					console.log(err.message);
+					// console.log('NOPE');
+					// console.log(err);
+					// console.log(err.message);
 				}
 			}
 		});

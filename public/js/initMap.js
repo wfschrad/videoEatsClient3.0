@@ -12,20 +12,18 @@ window.initMap = () => {
 	const test4 = { lat: 37.772, lng: -122.414 };
 
 	//icons
-	const blueFlagIcon = 'http://maps.google.com/mapfiles/ms/icons/flag.png';
-	const purpleIcon = 'http://maps.google.com/mapfiles/ms/icons/purple.png';
-	const purpleIconDot = 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
-
+	const blueFlagIcon = 'https://maps.google.com/mapfiles/ms/icons/flag.png';
+	const purpleIcon = 'https://maps.google.com/mapfiles/ms/icons/purple.png';
+	const purpleIconDot = 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png';
 
 	const options = {
 		center: sf,
 		zoom: 13
 	};
-	const map = new google.maps.Map(document.getElementById('map'),
-		options);
+	const map = new google.maps.Map(document.getElementById('map'), options);
 
 	const marker = new google.maps.Marker({
 		position: test2,
 		map: map
 	});
-}
+};

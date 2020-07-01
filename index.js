@@ -90,11 +90,4 @@ app.get('/search', (req, res) => {
 	});
 });
 
-// app.get('/map', (req, res) => {
-// 	res.render('google-map');
-// });
-
-// Defining the port
-//const port = 4000;
-
 app.listen(port, () => console.log(`Listening on port ${port}...`));
