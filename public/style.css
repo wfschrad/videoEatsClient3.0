@@ -2,11 +2,12 @@
 	display: none !important;
 }
 h1 {
-	color: #8B008B;
+	color: #8b008b;
 }
 .home-main {
-	color: #8B008B;
-	font-family: "Segoe UI", Roboto ,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	color: #8b008b;
+	font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	text-align: center;
 	font-size: 36px;
 	font-weight: 600;
@@ -19,7 +20,7 @@ h1 {
 }
 #search-btn {
 	color: olivedrab;
-	border-color: olivedrab
+	border-color: olivedrab;
 }
 #search-btn:hover {
 	background-color: #ffc107;
@@ -315,4 +316,50 @@ img.photo-item {
 	display: inline-block;
 	max-width: 300px;
 	max-height: 250px;
+}
+
+/* Footer Styles */
+#footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	height: 10vh;
+	background-color: #f8f9fa;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.footer__team {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 0;
+	padding-inline-start: 0;
+}
+
+.footer__right--right {
+	text-align: center;
+}
+
+.footer__team--styles {
+	margin-left: 15px;
+}
+
+.footer__social-icon--github {
+	margin-left: 10px;
+	font-size: 25px;
+	color: black;
+}
+
+.footer__social-icon--linkedin {
+	font-size: 25px;
+}
+
+.footer__about {
+	margin-bottom: 0;
 }
