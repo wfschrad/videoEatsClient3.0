@@ -10,19 +10,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 	function checkUserReview(reviews) {
 		const sessionUserId = parseInt(localStorage.getItem('VIDEO_EATS_CURRENT_USER_ID'));
 		reviews.forEach((element) => {
-			// const edit = document.getElementById(`edit-${element.User.id}`);
-			// edit.addEventListener('click', async (e) => {
-			// 	const response = await fetch(`${api}businesses/reviews/${element.id}`, {
-			// 		method: 'PUT',
-			// 		headers: {
-			// 			Authorization: `Bearer ${localStorage.getItem('VIDEO_EATS_ACCESS_TOKEN')}`
-			// 		}
-			// 	});
-			// 	if (!response.ok) {
-			// 		throw response;
-			// 	}
-			// 	window.location.href = `/businesses/reviews/${element.id}`;
-			// });
+			const edit = document.getElementById(`edit-${element.User.id}`);
+			edit.addEventListener('click', async (e) => {
+				// const response = await fetch(`${api}businesses/reviews/${element.id}`, {
+				// 	method: 'PUT',
+				// 	headers: {
+				// 		Authorization: `Bearer ${localStorage.getItem('VIDEO_EATS_ACCESS_TOKEN')}`
+				// 	}
+				// });
+				// if (!response.ok) {
+				// 	throw response;
+				// }
+				window.location.href = `/businesses/reviews/${element.id}/edit`;
+			});
 			const deleteButton = document.getElementById(`delete-${element.User.id}`);
 			deleteButton.addEventListener('click', async (e) => {
 				const response = await fetch(`${api}businesses/reviews/${element.id}`, {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 				document.getElementById(`review-${element.id}`).remove();
 			});
 			if (sessionUserId === element.User.id) {
-				// edit.classList.remove('hidden');
+				edit.classList.remove('hidden');
 				deleteButton.classList.remove('hidden');
 			}
 		});
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		const votesRes = await fetch(`${api}users/${userId}/votes`);
 		const { userVotes } = await votesRes.json();
-		console.log('userVotes', userVotes);
+		// console.log('userVotes', userVotes);
 
 		userVotes.forEach((userVote) => {
 			const restoredBtn = document.getElementById(`${userVote.reviewId}-${userVote.typeId}`);
