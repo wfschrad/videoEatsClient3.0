@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 	// Check each review for User ID. if there is a match, then add the edit/delete button
 	function checkUserReview(reviews) {
 		const sessionUserId = parseInt(localStorage.getItem('VIDEO_EATS_CURRENT_USER_ID'));
-		reviews.forEach((element) => {
-			const edit = document.getElementById(`edit-${element.User.id}`);
-			edit.addEventListener('click', async (e) => {
-				// const response = await fetch(`${api}businesses/reviews/${element.id}`, {
+		reviews.forEach((review) => {
+			const editButton = document.getElementById(`edit-${review.User.id}`);
+			editButton.addEventListener('click', async (e) => {
+				// const response = await fetch(`${api}businesses/reviews/${review.id}`, {
 				// 	method: 'PUT',
 				// 	headers: {
 				// 		Authorization: `Bearer ${localStorage.getItem('VIDEO_EATS_ACCESS_TOKEN')}`
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 				// if (!response.ok) {
 				// 	throw response;
 				// }
-				window.location.href = `/businesses/reviews/${element.id}/edit`;
+				window.location.href = `/businesses/reviews/${review.id}/edit`;
 			});
-			const deleteButton = document.getElementById(`delete-${element.User.id}`);
+			const deleteButton = document.getElementById(`delete-${review.User.id}`);
 			deleteButton.addEventListener('click', async (e) => {
-				const response = await fetch(`${api}businesses/reviews/${element.id}`, {
+				const response = await fetch(`${api}businesses/reviews/${review.id}`, {
 					method: 'DELETE',
 					headers: {
 						Authorization: `Bearer ${localStorage.getItem('VIDEO_EATS_ACCESS_TOKEN')}`
@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 				if (!response.ok) {
 					throw response;
 				}
-				document.getElementById(`review-${element.id}`).remove();
+				document.getElementById(`review-${review.id}`).remove();
 			});
-			if (sessionUserId === element.User.id) {
-				edit.classList.remove('hidden');
+			if (sessionUserId === review.User.id) {
+				editButton.classList.remove('hidden');
 				deleteButton.classList.remove('hidden');
 			}
 		});
