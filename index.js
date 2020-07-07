@@ -83,6 +83,16 @@ app.get(
 	})
 );
 
+app.get(
+	'/businesses/reviews/:id(\\d+)/edit',
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		const fetchBusiness = await fetch(`${api}businesses/reviews/${req.params.id}`);
+		const { review } = await fetchBusiness.json();
+		res.render('edit-review', { title: 'Edit Review', review });
+	})
+);
+
 app.get('/search', (req, res) => {
 	res.render('search', {
 		title: 'Search',
