@@ -22,10 +22,18 @@ h1 {
 	color: olivedrab;
 	border-color: olivedrab;
 }
-#search-btn:hover {
+#search-btn:hover,
+.btn-search-by:hover {
 	background-color: #ffc107;
 	color: black;
 }
+
+.btn-search-by {
+	color: #fff;
+	background-color: olivedrab;
+	border-color: olivedrab;
+}
+
 .body-content {
 	padding: 40px;
 }

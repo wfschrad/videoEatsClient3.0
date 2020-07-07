@@ -3,29 +3,29 @@ extends layout.pug
 block content
     .form-container
         .errors-container
-        h1 Edit Review for
+        h1 Edit Review for #{review.Business.name}
         form.create-review
             //- Will come back to this as a stretch goal
             //- .form-group
             //-     input(type="text" name="businessName" id="businessName" placeholder="Business Name" class="form-control" required)
             .form-group
-                div(class="stars" data-rating="1")
+                div(class="stars" data-rating=`${review.businessRating}`)
                     span.star
                     span.star
                     span.star
                     span.star
                     span.star
             .form-group
-                textarea(name="reviewText" rows="10" placeholder="Write your review here!" class="form-control")
+                textarea(name="reviewText" rows="10" placeholder="Write your review here!" value=`${review.reviewText}` class="form-control") #{review.reviewText}
             .form-group
-                textarea(name="videoLink" class="form-control" placeholder="Embed a youtube source share URL: https://www.youtube.com/embed/ixgIQqr5008")
+                textarea(name="videoLink" class="form-control" placeholder="Embed a youtube source share URL: https://www.youtube.com/embed/ixgIQqr5008") #{review.videoLink}
             //- .form-group
             //-     input(type="text" class="form-control" id="reviewTags" name="reviewTags" placeholder="Search for related tags")
             //-     ul.tags-results
             //-     .selected-tags
             div
-                button(type="submit" class="btn btn-primary") Post Review
-                button(type="button" class="ml-2 btn" id="reivew-cancel-button") Cancel
+                button(type="submit" class="btn btn-primary") Update Review
+                button(type="button" class="ml-2 btn" id="review-cancel-button") Cancel
 
     script(type="module" src="/js/edit-review.js")
     script(type="module" src="/js/navbar-search.js")
