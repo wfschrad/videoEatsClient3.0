@@ -14,9 +14,15 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 	const categorySearch = document.getElementById('category-tags');
 	let tagValue;
 
-	dropDown.addEventListener('click', () => {
-		document.querySelector('.dropdown-menu').classList.toggle('show');
+	dropDown.addEventListener('click', (e) => {
+		e.stopPropagation();
+		dropDownMenu.classList.toggle('show');
 	});
+
+	document.addEventListener('click', () => {
+		dropDownMenu.classList.remove('show');
+	});
+
 	collapseButton.addEventListener('click', () => {
 		// TODO: show collapsed elements when clicking button
 		collapseButton.classList.toggle('show');
