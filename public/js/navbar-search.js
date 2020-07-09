@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 		} else if (event.target === dropDownLocation) {
 			dropDownToggle.innerHTML = 'Search by: ' + dropDownLocation.innerHTML;
 			searchField.placeholder = dropDownLocation.innerHTML;
-		} else if (event.target === dropDownTag) {
+		} else {
 			dropDownToggle.innerHTML = 'Search by: ' + dropDownTag.innerHTML;
 
 			// when the dropdown for tag is selected, hide the text search and display the category dropdown and set the search value to null
@@ -65,6 +65,10 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 	} catch (err) {
 		handleErrors(err);
 	}
+	categorySearch.addEventListener('change', (event) => {
+		tagValue = event.target.value;
+		sessionStorage.setItem('SEARCH_TAG', tagValue);
+	});
 
 	// set up the event listener for the submit button
 	navbarSearchForm.addEventListener('submit', async (e) => {

@@ -61,8 +61,8 @@ body {
 	transform: translate(-50%, -50%);
 	background-color: white;
 	padding: 25px;
-	width: 40%;
-	height: 18%;
+	width: 45%;
+	height: 20%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -186,6 +186,10 @@ body {
 /*styles for the selected start*/
 .star.rated::before {
 	content: '\2605'; /*filled star*/
+}
+
+.star:hover {
+	cursor: pointer;
 }
 
 .stars {

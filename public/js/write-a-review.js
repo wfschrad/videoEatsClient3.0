@@ -54,10 +54,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// prevents the default of the submit button
 		e.preventDefault();
 
+		const validYoutubeURL = (url) => {
+			let p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+			return url.match(p) ? true : false;
+		};
+
 		// Declare varibles to store and be parsed as a post method for the buisness
 		const formData = new FormData(reviewForm);
 		let reviewText = formData.get('reviewText');
 		let videoLink = formData.get('videoLink');
+
+		validYoutubeURL(videoLink);
 
 		// Logic to set the typeId
 		let typeId;
@@ -88,19 +95,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		// TODO: Create the event listener keyup for the business name search. this is a stretch goal.
 		try {
-			const res = await fetch(`${api}businesses/${id}/reviews`, {
-				method: 'POST',
-				body: JSON.stringify(body),
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${localStorage.getItem('VIDEO_EATS_ACCESS_TOKEN')}`
+			if (videoLink === '' || validYoutubeURL(videoLink)) {
+				const res = await fetch(`${api}businesses/${id}/reviews`, {
+					method: 'POST',
+					body: JSON.stringify(body),
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer ${localStorage.getItem('VIDEO_EATS_ACCESS_TOKEN')}`
+					}
+				});
+				if (!res.ok) {
+					throw res;
 				}
-			});
-			if (!res.ok) {
-				throw res;
-			}
 
-			window.location.href = `/businesses/${id}`;
+				window.location.href = `/businesses/${id}`;
+			} else {
+				alert('Youtube URL is not a valid URL.');
+			}
 		} catch (err) {
 			if (err.status === 401) {
 				window.location.href = '/log-in';
