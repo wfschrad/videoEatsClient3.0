@@ -20,7 +20,7 @@ window.initMap = (targets) => {
 			addMarker({
 				coords: { lat: parseFloat(target.lat), lng: parseFloat(target.lon) },
 				iconImage: purpleIconDot,
-				content: `<h5>${target.name}</h5> <h6> - ${target.averageRating} Stars</h6>`
+				content: `<h5>${target.name}</h5> <h6> - ${Number.parseFloat(target.averageRating).toPrecision(2)} Stars</h6>`
 			});
 		});
 	}
