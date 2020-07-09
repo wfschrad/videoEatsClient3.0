@@ -188,6 +188,10 @@ body {
 	content: '\2605'; /*filled star*/
 }
 
+.star:hover {
+	cursor: pointer;
+}
+
 .stars {
 	counter-reset: 0; /* resets the counter to be 0*/
 	font-size: 2.0rem;
