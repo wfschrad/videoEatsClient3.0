@@ -4,6 +4,11 @@
 h1 {
 	color: #8b008b;
 }
+
+button:focus {
+	outline: 0 !important;
+}
+
 .home-main {
 	color: #8b008b;
 	font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -242,7 +247,10 @@ body {
 	width: 100px;
 	margin-left: 10px;
 	padding: 5px;
+	border: none;
+	outline: none;
 }
+
 .vote:hover {
 	background-color: plum;
 	color: black;
