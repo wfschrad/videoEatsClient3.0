@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		});
 	}
 
-	//vote buttons
+	//get current user
 	const userId = localStorage.getItem('VIDEO_EATS_CURRENT_USER_ID');
 
 	// Handling the click event for write a review
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	}
 
 	//mark all saved vote instances accordingly
-	await renderVoteButtons();
+	await renderVoteButtons(); //289
 
 	//add listeners for vote buttons
 	const upVoteBtns = document.querySelectorAll('.upVote');
@@ -186,14 +186,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 		btn.addEventListener('click', async (ev) => {
 			// console.log('target', ev.target);
 			// console.log('targetId', ev.target.id);
-			btn.disabled = true;
-			btn.classList.add('clicked');
-			const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}2`;
-			// console.log('TOGGLEtargetId', toggleTargetId);
+			// btn.disabled = true;
 
-			const btnMirror = document.getElementById(toggleTargetId);
-			btnMirror.disabled = false;
-			btnMirror.classList.remove('clicked');
 
 			//create vote instance and save to db
 			try {
@@ -216,6 +210,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 				if (!res.ok) {
 					throw res;
 				}
+
+				if (res.status === 206) {
+					btn.classList.remove('clicked');
+				} else {
+					btn.classList.add('clicked');
+					const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}2`;
+					// console.log('TOGGLEtargetId', toggleTargetId);
+
+					const btnMirror = document.getElementById(toggleTargetId);
+					// btnMirror.disabled = false;
+					btnMirror.classList.remove('clicked');
+				}
+
+				//if res indicates pos vote
+
+				//if res indicates vote removal
+
 				const data = await res.json();
 				// console.log('data(155', data);
 				btn.innerHTML = `Like: ${data.upVoteCount}`;
@@ -238,14 +249,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 		btn.addEventListener('click', async (ev) => {
 			// console.log('target', ev.target);
 			// console.log('targetId', ev.target.id);
-			btn.disabled = true;
-			btn.classList.add('clicked');
-			const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
+			// btn.disabled = true;
+			// btn.classList.add('clicked');
+			// const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
 			// console.log('TOGGLEtargetId', toggleTargetId);
 
-			const btnMirror = document.getElementById(toggleTargetId);
-			btnMirror.disabled = false;
-			btnMirror.classList.remove('clicked');
+			// const btnMirror = document.getElementById(toggleTargetId);
+			// btnMirror.disabled = false;
+			// btnMirror.classList.remove('clicked');
 
 			//create vote instance and save to db
 			try {
@@ -268,6 +279,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 				if (!res.ok) {
 					throw res;
 				}
+
+				if (res.status === 206) {
+					btn.classList.remove('clicked');
+				} else {
+					btn.classList.add('clicked');
+					const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
+					// console.log('TOGGLEtargetId', toggleTargetId);
+
+					const btnMirror = document.getElementById(toggleTargetId);
+					// btnMirror.disabled = false;
+					btnMirror.classList.remove('clicked');
+				}
+
 				const data = await res.json();
 				// console.log('data(155', data);
 				btn.innerHTML = `Dislike: ${data.downVoteCount}`;
@@ -297,7 +321,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 			const restoredBtn = document.getElementById(`${userVote.reviewId}-${userVote.typeId}`);
 			if (restoredBtn) {
 				restoredBtn.classList.add('clicked');
-				restoredBtn.disabled = true;
+				// restoredBtn.disabled = true;
 			}
 		});
 	}
