@@ -210,15 +210,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 				if (!res.ok) {
 					throw res;
 				}
+				console.log('res: ', res);
+				debugger;
 
+				const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}2`;
+				const btnMirror = document.getElementById(toggleTargetId);
 				if (res.status === 206) {
 					btn.classList.remove('clicked');
 				} else {
 					btn.classList.add('clicked');
-					const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}2`;
 					// console.log('TOGGLEtargetId', toggleTargetId);
-
-					const btnMirror = document.getElementById(toggleTargetId);
 					// btnMirror.disabled = false;
 					btnMirror.classList.remove('clicked');
 				}
@@ -228,7 +229,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 				//if res indicates vote removal
 
 				const data = await res.json();
-				// console.log('data(155', data);
+				debugger;
+				console.log('data(155', data);
 				btn.innerHTML = `Like: ${data.upVoteCount}`;
 				btnMirror.innerHTML = `Dislike: ${data.downVoteCount}`;
 
@@ -280,14 +282,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 					throw res;
 				}
 
+				const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
+					// console.log('TOGGLEtargetId', toggleTargetId);
+				const btnMirror = document.getElementById(toggleTargetId);
+
 				if (res.status === 206) {
 					btn.classList.remove('clicked');
 				} else {
 					btn.classList.add('clicked');
-					const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
-					// console.log('TOGGLEtargetId', toggleTargetId);
 
-					const btnMirror = document.getElementById(toggleTargetId);
 					// btnMirror.disabled = false;
 					btnMirror.classList.remove('clicked');
 				}
