@@ -87,10 +87,8 @@ app.get(
 	'/businesses/reviews/:id(\\d+)/edit',
 	csrfProtection,
 	asyncHandler(async (req, res) => {
-		const fetchBusiness = await fetch(`${api}reviews/${req.params.id}`);
-		console.log(fetchBusiness);
+		const fetchBusiness = await fetch(`${api}businesses/reviews/${req.params.id}`);
 		const { review } = await fetchBusiness.json();
-		console.log(review);
 		res.render('edit-review', { title: 'Edit Review', review });
 	})
 );
