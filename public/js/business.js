@@ -188,7 +188,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 			// console.log('targetId', ev.target.id);
 			// btn.disabled = true;
 
-
 			//create vote instance and save to db
 			try {
 				const body = {
@@ -211,7 +210,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 					throw res;
 				}
 				console.log('res: ', res);
-				debugger;
 
 				const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}2`;
 				const btnMirror = document.getElementById(toggleTargetId);
@@ -229,7 +227,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 				//if res indicates vote removal
 
 				const data = await res.json();
-				debugger;
 				console.log('data(155', data);
 				btn.innerHTML = `Like: ${data.upVoteCount}`;
 				btnMirror.innerHTML = `Dislike: ${data.downVoteCount}`;
@@ -283,7 +280,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 				}
 
 				const toggleTargetId = `${ev.target.id.slice(0, ev.target.id.length - 1)}1`;
-					// console.log('TOGGLEtargetId', toggleTargetId);
+				// console.log('TOGGLEtargetId', toggleTargetId);
 				const btnMirror = document.getElementById(toggleTargetId);
 
 				if (res.status === 206) {
