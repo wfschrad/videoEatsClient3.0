@@ -10,7 +10,7 @@ window.initMap = (targets) => {
 
 	const options = {
 		center: sf,
-		zoom: 13
+		zoom: 12
 	};
 	const map = new google.maps.Map(document.getElementById('map'), options);
 
