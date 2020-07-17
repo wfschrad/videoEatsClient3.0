@@ -140,8 +140,9 @@ body {
 
 /* Log in form styles */
 .log-in-container {
-	margin: 0 auto;
-	width: 800px;
+	margin: 30px auto;
+	text-align: center;
+	width: 70%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
