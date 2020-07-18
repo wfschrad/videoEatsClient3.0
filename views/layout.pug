@@ -19,22 +19,22 @@ html
     nav.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-container
       #home
         a.navbar-brand(href='/') VideoEats
-      #nav-search
+      #nav-search.nav-search
         .nav-item.dropdown.navbar-category-dropdown
             button#navbarDropdown.btn.btn-search-by.nav-link.dropdown-toggle(role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
               | Search for: Category
             .dropdown-menu(aria-labelledby='navbarDropdown')
               a.dropdown-item#item-name(href='#') Restaurant Name
               a.dropdown-item#item-tag(href='#') Category
-        #navbar-search-form.ml-2
+        #navbar-search-form.ml-2.navbar-search-form
           form.form-inline.navbar-search.my-2.my-lg-0
             input.form-control.mr-sm-2.searchField.hidden(type='text' placeholder='Search' id="navbarSearch")
             select.form-control.mr-sm-2#category-tags
               option.category-item#category-default
             button.btn.btn-outline-success.my-2.my-sm-0#search-btn(type='submit') Search
-      #account-options
-        #navbarSupportedContent.collapse.navbar-collapse 
-          ul.navbar-nav.mr-auto
+      .account-options
+        #navbarSupportedContent.navbar-collapse
+          ul.navbar__nav.mr-auto
             span(class='navbar-text px-4 navLoggedIn_Welcome hidden') 
             li.nav-item
               a.nav-link(class='navLoggedOut' href='/log-in') Log in
