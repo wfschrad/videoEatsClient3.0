@@ -9,6 +9,10 @@ button:focus {
 	outline: 0 !important;
 }
 
+a {
+	color: inherit;
+}
+
 .home-main {
 	color: #8b008b;
 	font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -302,7 +306,7 @@ body {
 	display: inline-block;
 }
 
-#account-options {
+.account-options {
 	display: inline-block;
 }
 
@@ -312,6 +316,16 @@ body {
 
 .navbar-category-dropdown {
 	display: inline-block;
+}
+
+.navbar__nav {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: row;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
 }
 
 #navbarSearch {
@@ -389,7 +403,49 @@ img.photo-item {
 }
 
 /* media queries */
-@media only screen and (min-width: 576px) {
+@media screen, (max-width: 600px) {
+	/* .nav-search {
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+	.navbar-search-form {
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: center !important;
+		align-items: center !important;
+    } */
+	.child {
+		width: 80% !important;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	#navbarSearch {
+		width: 155px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#navbarSearch {
+		width: 155px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#navbarSearch {
+		width: 155px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	#navbarSearch {
+		width: 155px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
 	#navbarSearch {
 		width: 155px;
 	}
